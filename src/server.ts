@@ -6,7 +6,9 @@ import helmet from 'helmet';
 const app:Application = express();
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
-app.use(bodyParser());
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
 app.use(cors());
 app.use(helmet())
 const port : number | string = process.env.PORT || 8000;
