@@ -1,11 +1,12 @@
+import { StyledColorBlock, BtnContainer, H1Title } from './GlobalStyles/GlobalStyles';
 
 function App() {
   return (
     <>
-      <button className="btn btn-success">Start building now</button>
-      <h1 className="text-center">Start building now Yan</h1>
+      <BtnContainer>Start building now Yan</BtnContainer>
+      <h1 className="text-center">Happy Coding!!!</h1>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

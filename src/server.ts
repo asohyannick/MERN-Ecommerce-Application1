@@ -9,7 +9,11 @@ app.use(express.urlencoded({extended: true}));
 app.use(bodyParser.urlencoded({
     extended: true
 }));
-app.use(cors());
+const corsOptions = {
+    origin: "http://localhost:3000",
+    optionSuccessStatus: 200,
+}
+app.use(cors(corsOptions));
 app.use(helmet())
 const port : number | string = process.env.PORT || 8000;
 app.get('/testing', function(req:Request, res: Response, next: NextFunction) {
