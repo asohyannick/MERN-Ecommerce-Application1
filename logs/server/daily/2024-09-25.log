@@ -1,0 +1,69 @@
+error: Database connection error: Cannot read properties of undefined (reading 'startsWith') {"stack":"TypeError: Cannot read properties of undefined (reading 'startsWith')\n    at connectionStringHasValidScheme (C:\\Users\\Yannick\\Documents\\keepCoding\\Full-stack-projects\\Node-Full-Stack-Projects\\MERN-ECOMMERCE-APPLICATION\\node_modules\\mongodb-connection-string-url\\src\\index.ts:13:22)\n    at new ConnectionString (C:\\Users\\Yannick\\Documents\\keepCoding\\Full-stack-projects\\Node-Full-Stack-Projects\\MERN-ECOMMERCE-APPLICATION\\node_modules\\mongodb-connection-string-url\\src\\index.ts:132:30)\n    at parseOptions (C:\\Users\\Yannick\\Documents\\keepCoding\\Full-stack-projects\\Node-Full-Stack-Projects\\MERN-ECOMMERCE-APPLICATION\\node_modules\\mongoDB\\src\\connection_string.ts:254:15)\n    at new MongoClient (C:\\Users\\Yannick\\Documents\\keepCoding\\Full-stack-projects\\Node-Full-Stack-Projects\\MERN-ECOMMERCE-APPLICATION\\node_modules\\mongoDB\\src\\mongo_client.ts:369:34)\n    at Database.<anonymous> (C:\\Users\\Yannick\\Documents\\keepCoding\\Full-stack-projects\\Node-Full-Stack-Projects\\MERN-ECOMMERCE-APPLICATION\\src\\Config\\DB\\Database.ts:20:43)\n    at Generator.next (<anonymous>)\n    at C:\\Users\\Yannick\\Documents\\keepCoding\\Full-stack-projects\\Node-Full-Stack-Projects\\MERN-ECOMMERCE-APPLICATION\\src\\Config\\DB\\Database.ts:31:71\n    at new Promise (<anonymous>)\n    at __awaiter (C:\\Users\\Yannick\\Documents\\keepCoding\\Full-stack-projects\\Node-Full-Stack-Projects\\MERN-ECOMMERCE-APPLICATION\\src\\Config\\DB\\Database.ts:27:12)\n    at Database.initializeDatabase (C:\\Users\\Yannick\\Documents\\keepCoding\\Full-stack-projects\\Node-Full-Stack-Projects\\MERN-ECOMMERCE-APPLICATION\\src\\Config\\DB\\Database.ts:18:57)","timestamp":"2024-09-25T10:43:43.876Z"}
+info: Server started at http://localhost :runing on port 8000 and on API version /api/v1/ {"timestamp":"2024-09-25T12:20:17.811Z"}
+error: 
+    status - 500 
+    message - Error: Error fetching users: Operation `users.find()` buffering timed out after 10000ms
+    at UserService.<anonymous> (C:\Users\Yannick\Documents\keepCoding\Full-stack-projects\Node-Full-Stack-Projects\MERN-ECOMMERCE-APPLICATION\src\Services\UserServices\User.Services.ts:13:15)
+    at Generator.throw (<anonymous>)
+    at rejected (C:\Users\Yannick\Documents\keepCoding\Full-stack-projects\Node-Full-Stack-Projects\MERN-ECOMMERCE-APPLICATION\src\Services\UserServices\User.Services.ts:6:65)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5) 
+    url - /api/v1/users/ 
+    method - GET 
+    IP - ::1
+   {"timestamp":"2024-09-25T12:23:15.992Z"}
+info: Server started at http://localhost :runing on port 8000 and on API version /api/v1/ {"timestamp":"2024-09-25T12:24:26.332Z"}
+info: Server started at http://localhost :runing on port 8000 and on API version /api/v1/ {"timestamp":"2024-09-25T12:24:54.676Z"}
+error: 
+    status - 500 
+    message - Error: Error fetching users: Operation `users.find()` buffering timed out after 10000ms
+    at UserService.<anonymous> (C:\Users\Yannick\Documents\keepCoding\Full-stack-projects\Node-Full-Stack-Projects\MERN-ECOMMERCE-APPLICATION\src\Services\UserServices\User.Services.ts:13:15)
+    at Generator.throw (<anonymous>)
+    at rejected (C:\Users\Yannick\Documents\keepCoding\Full-stack-projects\Node-Full-Stack-Projects\MERN-ECOMMERCE-APPLICATION\src\Services\UserServices\User.Services.ts:6:65)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5) 
+    url - /api/v1/users/all-users 
+    method - GET 
+    IP - ::1
+   {"timestamp":"2024-09-25T12:25:25.450Z"}
+info: Server started at http://localhost :runing on port 8000 and on API version /api/v1/ {"timestamp":"2024-09-25T12:27:54.264Z"}
+error: 
+      status - 400
+      message - Authorization token is required 
+      url - /api/v1/users/1 
+      method - GET 
+      IP - ::1
+     {"timestamp":"2024-09-25T12:28:12.267Z"}
+info: Server started at http://localhost :runing on port 8000 and on API version /api/v1/ {"timestamp":"2024-09-25T12:29:33.616Z"}
+info: Server started at http://localhost :runing on port 8000 and on API version /api/v1/ {"timestamp":"2024-09-25T12:30:39.468Z"}
+error: 
+    status - 500 
+    message - Error: Error fetching users: Operation `users.find()` buffering timed out after 10000ms
+    at UserService.<anonymous> (C:\Users\Yannick\Documents\keepCoding\Full-stack-projects\Node-Full-Stack-Projects\MERN-ECOMMERCE-APPLICATION\src\Services\UserServices\User.Services.ts:13:15)
+    at Generator.throw (<anonymous>)
+    at rejected (C:\Users\Yannick\Documents\keepCoding\Full-stack-projects\Node-Full-Stack-Projects\MERN-ECOMMERCE-APPLICATION\src\Services\UserServices\User.Services.ts:6:65)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5) 
+    url - /api/v1/users/all-users 
+    method - GET 
+    IP - ::1
+   {"timestamp":"2024-09-25T12:34:08.189Z"}
+info: Server started at http://localhost :runing on port 8000 and on API version /api/v1/ {"timestamp":"2024-09-25T12:35:51.048Z"}
+info: Server started at http://localhost :runing on port 8000 and on API version /api/v1/ {"timestamp":"2024-09-25T12:38:10.128Z"}
+info: Server started at http://localhost :runing on port 8000 and on API version /api/v1/ {"timestamp":"2024-09-25T12:39:06.352Z"}
+info: Server started at http://localhost :runing on port 8000 and on API version /api/v1/ {"timestamp":"2024-09-25T12:39:38.200Z"}
+info: Server started at http://localhost :runing on port 8000 and on API version /api/v1/ {"timestamp":"2024-09-25T12:39:54.750Z"}
+info: Server started at http://localhost :runing on port 8000 and on API version /api/v1/ {"timestamp":"2024-09-25T12:40:30.301Z"}
+info: Server started at http://localhost :runing on port 8000 and on API version /api/v1/ {"timestamp":"2024-09-25T12:41:04.213Z"}
+info: Server started at http://localhost :runing on port 8000 and on API version /api/v1/ {"timestamp":"2024-09-25T12:42:28.625Z"}
+info: Server started at http://localhost :runing on port 8000 and on API version /api/v1/ {"timestamp":"2024-09-25T12:44:34.349Z"}
+info: Server started at http://localhost :runing on port 8000 and on API version /api/v1/ {"timestamp":"2024-09-25T12:45:40.689Z"}
+info: Server started at http://localhost :runing on port 8000 and on API version /api/v1/ {"timestamp":"2024-09-25T12:46:29.318Z"}
+info: Server started at http://localhost :runing on port 8000 and on API version /api/v1/ {"timestamp":"2024-09-25T12:47:01.390Z"}
+info: Server started at http://localhost :runing on port 8000 and on API version /api/v1/ {"timestamp":"2024-09-25T12:47:41.564Z"}
+info: Server started at http://localhost :runing on port 8000 and on API version /api/v1/ {"timestamp":"2024-09-25T12:47:50.659Z"}
+info: Server started at http://localhost :runing on port 8000 and on API version /api/v1/ {"timestamp":"2024-09-25T12:48:12.896Z"}
+info: Server started at http://localhost :runing on port 8000 and on API version /api/v1/ {"timestamp":"2024-09-25T12:49:36.288Z"}
+info: Server started at http://localhost :runing on port 8000 and on API version /api/v1/ {"timestamp":"2024-09-25T12:50:48.937Z"}
+info: Server started at http://localhost : runing on port 8000 and on API version /api/v1/ {"timestamp":"2024-09-25T12:52:40.703Z"}
+info: Server started at http://localhost : runing on port 8000 and on API version /api/v1/ {"timestamp":"2024-09-25T12:56:15.598Z"}
+info: Server started at http://localhost : runing on port 8000 and on API version /api/v1/ {"timestamp":"2024-09-25T12:59:11.123Z"}
+info: Server started at http://localhost : runing on port 8000 and on API version /api/v1/ {"timestamp":"2024-09-25T13:04:01.523Z"}
+info: Server started at http://localhost : runing on port 8000 and on API version /api/v1/ {"timestamp":"2024-09-25T13:05:28.322Z"}
