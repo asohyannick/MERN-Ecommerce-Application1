@@ -1,75 +1,49 @@
-import User from '../../Models/Users/User.model';
-import { IUser } from '../../Interfaces/UserInterface/User.interface';
-
-class UserService {
-  // Get all users
-  public getAllUsers = async (): Promise<IUser[]> => {
-    try {
-      const data = await User.find();
-      return data;
-    } catch (error: unknown) {
-      if (error instanceof Error) {
-        throw new Error('Error fetching users: ' + error.message);
-      }
-      throw new Error('Error fetching users: ' + String(error));
+import User from "../../Models/Users/User.model";
+import HttpStatus from "http-status-codes";
+import { Response, Request, NextFunction } from "express";
+import jwt from "jsonwebtoken";
+const registerUser = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  try {
+    // check first if the user already exist
+    let user = await User.findOne({
+      email: req.body.email,
+    });
+    if (user) {
+      return res
+        .status(HttpStatus.BAD_REQUEST)
+        .json({ message: "User already exist" });
     }
-  };
-
-  // Create new user
-  public newUser = async (body: IUser): Promise<IUser> => {
-    try {
-      const data = await User.create(body);
-      return data;
-    } catch (error: unknown) {
-      if (error instanceof Error) {
-        throw new Error('Error creating user: ' + error.message);
+    // save the already existed user
+    user = new User(req.body);
+    await user.save();
+    // create now a new user
+    const access_token = jwt.sign(
+      {
+        userId: user.id,
+      },
+      process.env.JWT_SECRET_KEY as string,
+      {
+        expiresIn: "1d",
       }
-      throw new Error('Error creating user: ' + String(error));
-    }
-  };
+    );
+    res.cookie("access_token", access_token, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === "production",
+      maxAge: 86400000,
+    });
+    return res
+      .status(HttpStatus.CREATED)
+      .json({ message: "User has been created successfully!!!" });
+  } catch (error) {
+    console.log(error);
+    return res
+      .status(HttpStatus.INTERNAL_SERVER_ERROR)
+      .json({message: "Something is broken"});
+  }
+};
 
-  // Update a user
-  public updateUser = async (_id: string, body: IUser): Promise<IUser | null> => {
-    try {
-      const data = await User.findByIdAndUpdate(
-        { _id },
-        body,
-        { new: true, runValidators: true }
-      );
-      return data; // This can be null if not found
-    } catch (error: unknown) {
-      if (error instanceof Error) {
-        throw new Error('Error updating user: ' + error.message);
-      }
-      throw new Error('Error updating user: ' + String(error));
-    }
-  };
-
-  // Delete a user
-  public deleteUser = async (_id: string): Promise<string> => {
-    try {
-      await User.findByIdAndDelete(_id);
-      return 'User deleted successfully';
-    } catch (error: unknown) {
-      if (error instanceof Error) {
-        throw new Error('Error deleting user: ' + error.message);
-      }
-      throw new Error('Error deleting user: ' + String(error));
-    }
-  };
-
-  // Get a single user
-  public getUser = async (_id: string): Promise<IUser | null> => {
-    try {
-      const data = await User.findById(_id);
-      return data; // This can be null if not found
-    } catch (error: unknown) {
-      if (error instanceof Error) {
-        throw new Error('Error fetching user: ' + error.message);
-      }
-      throw new Error('Error fetching user: ' + String(error));
-    }
-  };
-}
-
-export default UserService;
+export default registerUser;
